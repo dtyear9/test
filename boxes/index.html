@@ -1,28 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boxes | THE DECEMBER BOX</title>
-<link rel="icon" type="image/png" href="/favicon.png">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boxes — The December Box — thedecemberbox.christmas</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  body { margin:0; background:#F5F1EB; color:#0F0F0F; font-family: Helvetica, Arial, sans-serif; }
-  header { padding:32px 40px; display:flex; justify-content:space-between; align-items:flex-start; border-bottom:1px solid rgba(0,0,0,0.08); }
-  .logo { text-align:left; line-height:0.92; font-family:'Times New Roman', Times, serif; font-size:28px; }
-  nav a { margin-left:24px; text-decoration:none; color:#0F0F0F; font-size:12px; letter-spacing:0.15em; text-transform:uppercase; }
-  .content { padding:80px 40px; }
-  h1 { font-family:'Times New Roman', serif; font-size:56px; font-weight:400; line-height:0.9; text-align:left; margin:0; }
-  h1 div { margin:0; }
+:root{--cream:#F9F5F0;--ink:#1A1A1A}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5}
+h1,h3{font-family:'Playfair Display',serif}
+.nav{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #E8DDD4}
+.nav a{text-decoration:none;color:var(--ink);margin-left:20px;font-size:13px;letter-spacing:0.1em;text-transform:uppercase}
+.wrap{padding:60px 40px;max-width:1300px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
+.card{background:white;border:1px solid #E8DDD4;padding:28px}
+.card h3{font-size:22px;margin-bottom:4px}
+.card .count{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.5;margin-bottom:12px}
+.card ul{font-size:14px;opacity:0.8;margin:12px 0 16px 18px}
+.card ul li{margin-bottom:4px}
+.card ul li.filler{opacity:0.6;font-style:italic}
+.meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eee;padding-top:14px;margin-top:14px;font-size:13px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header>
-  <a href="/" style="text-decoration:none; color:inherit;"><div class="logo"><div>THE</div><div>DECEMBER</div><div>BOX</div></div></a>
-  <nav><a href="/boxes/">Boxes</a><a href="/homeware/">Homeware</a><a href="/#waitlist">Waitlist</a></nav>
-</header>
-<div class="content">
-  <h1><div>THE</div><div>DECEMBER</div><div>BOXES</div></h1>
-  <p style="margin-top:24px; max-width:480px; line-height:1.6;">£85 per box. Limited run of 200. Twelve days, twelve small-batch British homeware pieces.</p>
+<div class="nav">
+<div style="font-weight:600;font-family:'Playfair Display';font-size:20px">The December Box</div>
+<div><a href="/">Home</a><a href="/boxes/">Boxes</a><a href="/homeware/">Homeware</a><a href="mailto:harry@thedecemberbox.christmas">harry@thedecemberbox.christmas</a></div>
+</div>
+<div class="wrap">
+<h1 style="font-size:52px">All 15 Boxes — Now 8-9 Items Inside</h1>
+<p style="opacity:0.7;max-width:700px;margin-top:12px">We added 3 small luxuries to every box (dried orange, cinnamon, Lindt, pine) — looks £20 more expensive for £1.55 extra. Free delivery over £70. thedecemberbox.christmas</p>
+
+<div class="grid">
+<div class="card"><h3>1. The Allotment Dad</h3><div class="count">8 ITEMS • BESTSELLER FOR DAD</div><ul><li>Enamel mug — Oat</li><li>Winter garlic seed set</li><li>Jute twine</li><li>Hand salve — gardener's repair</li><li>Pine & cedar candle 120g</li><li class="filler">+ Dried orange slices</li><li class="filler">+ Cinnamon bundle + pine cone</li><li class="filler">+ 3x Lindt truffles + handwritten tag</li></ul><div class="meta"><span>Cost £23.05 → Profit £44.95</span><strong>£68.00</strong></div></div>
+
+<div class="card"><h3>2. The New House Box</h3><div class="count">9 ITEMS • HERO BOX</div><ul><li>Mini olive tree</li><li>Stone key bowl</li><li>Linen tea towel — Home for Christmas</li><li>Reed diffuser — fig</li><li>Door number bauble</li><li>Small storage basket</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon sticks</li><li class="filler">+ Pine sprig + card</li></ul><div class="meta"><span>Cost £29.10 → Profit £55.90</span><strong>£85.00</strong></div></div>
+
+<div class="card"><h3>3. The Cosy Girl</h3><div class="count">8 ITEMS</div><ul><li>Teddy socks</li><li>Hot chocolate bomb</li><li>Hot water bottle cover</li><li>Cinnamon candle</li><li>Lip balm — vanilla</li><li class="filler">+ Dried orange + pine</li><li class="filler">+ Lindt truffles</li><li class="filler">+ Cosy card</li></ul><div class="meta"><span>Cost £20.45 → Profit £41.55</span><strong>£62.00</strong></div></div>
+
+<div class="card"><h3>4. The Homeware Mum</h3><div class="count">8 ITEMS</div><ul><li>Stoneware mug</li><li>Mini bud vase</li><li>Linen napkins x2</li><li>Hand soap — amber</li><li>All-butter shortbread tin</li><li class="filler">+ Orange slices + cinnamon</li><li class="filler">+ Pine cone + tag</li><li class="filler">+ Lindt</li></ul><div class="meta"><span>Cost £26.05 → Profit £51.95</span><strong>£78.00</strong></div></div>
+
+<div class="card"><h3>5. The EV Guy</h3><div class="count">8 ITEMS</div><ul><li>Reusable coffee cup</li><li>Car diffuser</li><li>Screen wipes</li><li>De-icer spray</li><li>Lindt Lindor</li><li>Funny EV sticker</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Orange + card</li></ul><div class="meta"><span>Cost £23.55 → Profit £41.45</span><strong>£65.00</strong></div></div>
+
+<div class="card"><h3>6. The Builder Dad</h3><div class="count">8 ITEMS</div><ul><li>Thermal work socks</li><li>Flask — black</li><li>Hand repair cream</li><li>Bacon jam</li><li>Beanie</li><li class="filler">+ Chocolate bar</li><li class="filler">+ Pine + cinnamon</li><li class="filler">+ Orange + tag</li></ul><div class="meta"><span>Cost £21.95 → Profit £38.05</span><strong>£60.00</strong></div></div>
+
+<div class="card"><h3>7. The Teacher</h3><div class="count">8 ITEMS</div><ul><li>Red wine mini</li><li>Candle — You Survived</li><li>Bath salts</li><li>Shortbread cookies</li><li>Gold pen</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li><li class="filler">+ Thank you card</li></ul><div class="meta"><span>Cost £21.15 → Profit £36.85</span><strong>£58.00</strong></div></div>
+
+<div class="card"><h3>8. The Dog Mum</h3><div class="count">8 ITEMS</div><ul><li>Dog treats — natural</li><li>Paw balm</li><li>Fleece blanket</li><li>Socks — dog mum</li><li>Lead hook — brass</li><li class="filler">+ Tennis ball</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt for mum</li></ul><div class="meta"><span>Cost £24.75 → Profit £47.25</span><strong>£72.00</strong></div></div>
+
+<div class="card"><h3>9. First Christmas Together</h3><div class="count">9 ITEMS</div><ul><li>2x matching mugs</li><li>Throw — cream</li><li>Photo frame ornament</li><li>Popcorn for 2</li><li>Mulled wine spice kit</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Card + Lindt</li></ul><div class="meta"><span>Cost £27.05 → Profit £54.95</span><strong>£82.00</strong></div></div>
+
+<div class="card"><h3>10. The Grandad Who Naps</h3><div class="count">8 ITEMS</div><ul><li>Slippers</li><li>Fleece blanket</li><li>Werther's Original</li><li>Crossword book</li><li>Yorkshire Tea</li><li class="filler">+ Hot water bottle — mini</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Pine + tag</li></ul><div class="meta"><span>Cost £22.55 → Profit £42.45</span><strong>£65.00</strong></div></div>
+
+<div class="card"><h3>11. The Organised Mum</h3><div class="count">8 ITEMS</div><ul><li>2026 Planner</li><li>Storage baskets small x2</li><li>Label pen</li><li>Candle — linen</li><li>Biscuits</li><li class="filler">+ Tea bags</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span>Cost £24.35 → Profit £43.65</span><strong>£68.00</strong></div></div>
+
+<div class="card"><h3>12. Student / First Flat</h3><div class="count">8 ITEMS</div><ul><li>Fairy lights — warm</li><li>Ramen bowl</li><li>Tea towel — washing guide</li><li>Candle — small</li><li>Instant coffee pack</li><li class="filler">+ Noodles</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt</li></ul><div class="meta"><span>Cost £19.05 → Profit £35.95</span><strong>£55.00</strong></div></div>
+
+<div class="card"><h3>13. Gamer Boyfriend</h3><div class="count">8 ITEMS</div><ul><li>Snack bowl</li><li>Fluffy socks</li><li>LED strip</li><li>Energy drink</li><li>Hand warmer</li><li class="filler">+ Sweets</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span>Cost £19.75 → Profit £40.25</span><strong>£60.00</strong></div></div>
+
+<div class="card"><h3>14. Kitchen Obsessed</h3><div class="count">8 ITEMS</div><ul><li>Olive wood spoon</li><li>Sea salt flakes</li><li>Chilli oil</li><li>Tea towel</li><li>Recipe cards</li><li class="filler">+ Candle</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li></ul><div class="meta"><span>Cost £25.55 → Profit £49.45</span><strong>£75.00</strong></div></div>
+
+<div class="card"><h3>15. Signature December Box</h3><div class="count">9 ITEMS • FLAGSHIP</div><ul><li>Throw — oatmeal</li><li>Signature pine & orange candle 180g</li><li>Linen apron</li><li>Recipe book — Christmas</li><li>Dried orange garland — long</li><li>Cinnamon bundle large</li><li class="filler">+ Pine cones x3</li><li class="filler">+ Lindt + shortbread</li><li class="filler">+ Wax sealed card</li></ul><div class="meta"><span>Cost £31.20 → Profit £63.80</span><strong>£95.00</strong></div></div>
+
+</div>
 </div>
 </body>
 </html>
