@@ -9,11 +9,13 @@
 :root{--ink:#0F0F0F;--paper:#F5F1EB;--line:rgba(0,0,0,0.08)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:14px Helvetica,Arial,sans-serif}
-header{padding:32px 40px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:10}
-.logo{font-family:'Times New Roman',serif;font-size:28px;line-height:0.92}
+header{padding:32px 40px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:10}
+.logo{font-family:'Times New Roman',Times,serif;font-size:28px;line-height:0.92;text-align:left}
+.logo div{margin:0}
 nav a{margin-left:24px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:0.15em;text-transform:uppercase}
 .wrap{max-width:1100px;margin:auto;padding:48px 40px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px}
-h1{font-family:'Times New Roman',serif;font-size:42px;font-weight:400;margin:0}
+h1{font-family:'Times New Roman',serif;font-size:42px;font-weight:400;margin:0;line-height:0.9}
+.sub{opacity:0.6;margin-top:8px;font-size:12px}
 .card{background:white;border:1px solid var(--line);padding:28px;margin-top:24px}
 label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin:18px 0 6px;opacity:0.7}
 input,textarea{width:100%;padding:12px;border:1px solid var(--line);background:#FCFBF9;font:14px Helvetica;outline:none}
@@ -21,30 +23,23 @@ input:focus,textarea:focus{border-color:var(--ink)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .btn{width:100%;background:var(--ink);color:var(--paper);border:none;padding:16px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;margin-top:20px;transition:0.2s}
 .btn:hover{opacity:0.85}
-.btn:disabled{opacity:0.4;pointer-events:none}
 .row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
 .total{font-weight:bold;font-size:16px;font-family:'Times New Roman';border:none;padding-top:16px}
 .success{display:none;background:#0F0F0F;color:#F5F1EB;padding:32px;margin-top:24px}
-.success h2{font-family:'Times New Roman';font-weight:400;margin:0 0 12px}
-.bank{border:1px dashed #F5F1EB;padding:16px;margin:16px 0;background:#1e1e1e;color:#F5F1EB}
-@media(max-width:900px){.wrap{grid-template-columns:1fr;padding:24px} header{padding:20px 24px}}
+.bank{border:1px dashed rgba(255,255,255,0.6);padding:16px;margin:16px 0;background:#1a1a1a}
+@media(max-width:900px){.wrap{grid-template-columns:1fr;padding:24px} header{padding:20px 24px} h1{font-size:32px}}
 </style>
 </head>
 <body>
 <header>
-<a href="/" style="text-decoration:none;color:inherit"><div class="logo"><div>THE</div><div>DECEMBER</div><div>BOX</div></div>
-  <div class="nav">
-<div><a href="index.html">Home</a>
-  <a href="boxes.html">Boxes</a>
-  <a href="homeware.html">Homeware</a>
-  <a href="basket.html">Basket <span class="cart-count" id="cartCount">0</span></a>
-</div>
+<a href="index.html" style="text-decoration:none;color:inherit"><div class="logo"><div>THE</div><div>DECEMBER</div><div>BOX</div></div></a>
+<nav><a href="index.html">HOME</a><a href="boxes.html">BOXES</a><a href="homeware.html">HOMEWARE</a></nav>
 </header>
 
 <div class="wrap">
 <div>
-<h1>Checkout</h1>
-<p style="opacity:0.6;margin-top:8px">Pay by bank transfer — no Stripe fees. Limited run.</p>
+<h1><div>Checkout</div></h1>
+<p class="sub">Pay by bank transfer — no Stripe fees. Limited run.</p>
 
 <div class="card" id="formCard">
 <label>Email *</label><input id="email" type="email" placeholder="you@email.com" required>
@@ -53,26 +48,30 @@ input:focus,textarea:focus{border-color:var(--ink)}
 <label>Phone</label><input id="phone" placeholder="For delivery updates">
 <label>Gift Note (optional)</label><textarea id="note" rows="3" placeholder="Handwritten tag text..."></textarea>
 <button class="btn" id="placeBtn">Place Order — Pay by Bank Transfer</button>
-<p style="font-size:11px;opacity:0.5;margin-top:12px">You’ll get bank details after placing order. We ship once payment clears. harry@thedecemberbox.christmas</p>
+<p style="font-size:11px;opacity:0.5;margin-top:12px">You’ll get bank details after placing order. We ship once payment clears.</p>
 </div>
 
 <div class="success" id="success">
 <h2>Order Placed — <span id="ref"></span></h2>
-<p>Thanks! We’ve received your order and emailed you a copy.</p>
+<p style="font-size:13px;opacity:0.8">Thanks! We've received your order and emailed you a copy.</p>
 <div class="bank">
-<strong>Account Name:</strong> THE DECEMBER BOX<br>
-<strong>Sort Code:</strong> 04-00-04<br>
-<strong>Account No:</strong> 12345678<br>
-<strong>Reference:</strong> <span id="ref2" style="font-weight:bold;text-decoration:underline"></span><br>
-<strong>Amount to Pay:</strong> <span id="payAmount" style="font-weight:bold"></span>
+Account Name: THE DECEMBER BOX<br>
+Sort Code: 04-00-04<br>
+Account No: 12345678<br>
+Reference: <span id="ref2" style="font-weight:bold;text-decoration:underline"></span><br>
+Amount to Pay: <span id="payAmount" style="font-weight:bold"></span>
 </div>
-<p style="font-size:13px;line-height:1.7">1. Open your banking app<br>2. Pay the amount above using the reference above<br>3. We confirm within 24h & ship<br><br>Any issues: harry@thedecemberbox.christmas</p>
+<p style="font-size:12px;line-height:1.7">
+1. Open your banking app<br>
+2. Pay the amount above using the reference above<br>
+3. We confirm within 24h & ship<br><br>
+Any issues: harry@thedecemberbox.christmas</p>
 </div>
 </div>
 
 <div>
 <div class="card" style="position:sticky;top:90px">
-<h2 style="font-family:'Times New Roman';font-weight:400;margin:0 0 16px">Your Order</h2>
+<h2 style="font-family:'Times New Roman';font-weight:400;margin:0 0 16px;font-size:18px">Your Order</h2>
 <div id="items"></div>
 <div class="row"><span>Subtotal</span><span id="sub">£0.00</span></div>
 <div class="row"><span>Delivery</span><span id="del">FREE</span></div>
@@ -85,79 +84,28 @@ input:focus,textarea:focus{border-color:var(--ink)}
 <script>
 const CART_KEY="coastCoCart";
 const FORMSPREE_URL="https://formspree.io/f/mrpbayla";
-
 function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||"[]")}catch(e){return[]}}
 function money(v){return new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP"}).format(v)}
-
 let cart=getCart();
 let sub=0; cart.forEach(i=> sub+= (Number(i.price)||0)*(Number(i.quantity)||1));
 let del = sub>=70 || sub==0 ? 0 : 4.95;
 let tot = sub+del;
-
 document.getElementById("sub").textContent=money(sub);
 document.getElementById("del").textContent= del==0 ? "FREE" : money(del);
 document.getElementById("tot").textContent=money(tot);
 document.getElementById("freeMsg").textContent= sub>=70 ? "✓ FREE delivery" : `Add ${money(70-sub)} more for FREE delivery`;
-document.getElementById("items").innerHTML= cart.length ? cart.map(i=> `<div class="row"><span>${i.name} x${i.quantity}</span><span>${money(i.price*i.quantity)}</span></div>`).join("") : "<p style='opacity:0.6'>Basket empty — <a href='/boxes/' style='color:inherit'>shop boxes</a></p>";
-
+document.getElementById("items").innerHTML= cart.length ? cart.map(i=> `<div class="row"><span>${i.name} x${i.quantity}</span><span>${money(i.price*i.quantity)}</span></div>`).join("") : "<p style='opacity:0.6'>Basket empty</p>";
 document.getElementById("placeBtn").onclick=async()=>{
   const email=document.getElementById("email").value.trim();
   const first=document.getElementById("first").value.trim();
   const addr=document.getElementById("addr").value.trim();
   if(!email||!first||!addr) return alert("Please fill email, first name and address");
-  if(!cart.length) return alert("Basket empty");
-
   const ref="DEC-"+Math.random().toString(36).toUpperCase().slice(2,7);
-  const order={
-    ref,
-    email,
-    first,
-    last:document.getElementById("last").value,
-    address:addr,
-    phone:document.getElementById("phone").value,
-    giftNote:document.getElementById("note").value,
-    items:cart.map(i=> `${i.name} x${i.quantity} — £${i.price*i.quantity}`).join(", "),
-    itemsDetail:cart,
-    subtotal:sub,
-    delivery:del,
-    total:tot,
-    date:new Date().toLocaleString("en-GB")
-  };
-
-  // Save locally
-  let all=JSON.parse(localStorage.getItem("december_orders")||"[]");
-  all.push(order);
-  localStorage.setItem("december_orders", JSON.stringify(all));
-  localStorage.setItem("december_last_order", JSON.stringify(order));
-
-  // Disable button
-  const btn=document.getElementById("placeBtn");
-  btn.textContent="Placing order...";
-  btn.disabled=true;
-
-  // Send to Formspree — this emails you at harry@...
-  try{
-    const res=await fetch(FORMSPREE_URL,{
-      method:"POST",
-      headers:{"Content-Type":"application/json","Accept":"application/json"},
-      body:JSON.stringify({
-        _subject:`New December Box Order ${ref} — ${money(tot)}`,
-        ref:ref,
-        email:email,
-        customer:`${first} ${document.getElementById("last").value}`,
-        address:addr,
-        phone:order.phone,
-        giftNote:order.giftNote,
-        items:order.items,
-        subtotal:money(sub),
-        delivery: del==0 ? "FREE" : money(del),
-        total:money(tot),
-        date:order.date
-      })
-    });
-  }catch(e){ console.log("Formspree error", e) }
-
-  // Show success even if Formspree fails — order saved locally
+  const order={ref,email,first,last:document.getElementById("last").value,address:addr,phone:document.getElementById("phone").value,giftNote:document.getElementById("note").value,items:cart.map(i=>`${i.name} x${i.quantity}`).join(", "),subtotal:money(sub),delivery:del==0?"FREE":money(del),total:money(tot),date:new Date().toLocaleString("en-GB")};
+  let all=JSON.parse(localStorage.getItem("december_orders")||"[]"); all.push(order);
+  localStorage.setItem("december_orders",JSON.stringify(all));
+  document.getElementById("placeBtn").textContent="Placing order..."; document.getElementById("placeBtn").disabled=true;
+  try{ await fetch(FORMSPREE_URL,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:`New Order ${ref} — ${money(tot)}`,...order})}); }catch(e){}
   document.getElementById("formCard").style.display="none";
   document.getElementById("success").style.display="block";
   document.getElementById("ref").textContent=ref;
