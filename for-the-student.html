@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For The Student | The December Box</title>
+<style>
+:root{--ink:#1A1A1A;--muted:#8A7F77;--paper:#F9F5F0;--white:#fff;--line:#E8DDD4;--beige:#F5F1EB}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px 'Inter',sans-serif}
+header{padding:32px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:20}
+.logo{font-family:'Times New Roman',Times,serif;font-size:22px;line-height:.95}
+nav{display:flex;align-items:center}nav a,.dropbtn{margin-left:24px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif}
+.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;top:20px;left:24px;background:var(--white);min-width:200px;border:1px solid var(--line);z-index:30;padding:8px 0}.dropdown-content a{display:block;margin:0;padding:10px 16px}.dropdown-content a:hover{background:var(--beige)}.dropdown:hover .dropdown-content{display:block}
+main{max-width:1100px;margin:auto;padding:40px 6vw}.h1{font:500 48px 'Playfair Display',serif;margin:0}.sub{color:var(--muted);margin:8px 0 30px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}.filters a{border:1px solid var(--line);padding:8px 14px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:white}.filters a.active{background:var(--ink);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--line);padding:0}.img{height:200px;background:linear-gradient(145deg,#EDE7DF,#F9F5F0);display:grid;place-items:center;color:var(--muted);font-size:11px;letter-spacing:.15em}.info{padding:16px}.info h3{font:500 18px 'Playfair Display',serif;margin:0 0 4px}.info p{color:var(--muted);font-size:13px;margin:0 0 10px}.price{font-weight:600}.btn{display:block;margin-top:12px;background:var(--ink);color:white;text-align:center;padding:10px;text-decoration:none;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}header{padding:20px 24px}}@media(max-width:500px){.grid{grid-template-columns:1fr}}
+</style>
+</head><body>
+<!-- paste same header -->
+<header>
+<a href="index.html" style="text-decoration:none;color:inherit">
+  <div class="logo">THE<br>DECEMBER<br>BOX</div>
+</a>
+<nav>
+  <div class="dropdown">
+    <button class="dropbtn">BOXES ▾</button>
+    <div class="dropdown-content">
+      <a href="boxes.html">All Boxes</a>
+      <a href="for-the-student.html">For The Student</a>
+      <a href="for-the-first-flat.html">For The First Flat</a>
+      <a href="for-the-couple.html">For The Couple</a>
+      <a href="for-the-host.html">For The Host</a>
+      <a href="for-little-ones.html">For Little Ones</a>
+    </div>
+  </div>
+  <a href="singles.html">SINGLES</a>
+  <a href="basket.html">BASKET (<span id="basket-count">0</span>)</a>
+</nav>
+</header>
+<main>
+<h1 class="h1">For The Student</h1>
+<p class="sub">Small space, big cosy. Budget-friendly December boxes.</p>
+<div class="grid">
+<div class="card" data-cat="student"><div class="img">STUDENT SURVIVAL</div><div class="info"><h3>Student Survival</h3><p>Desk candle, instant cocoa, study playlist</p><div class="price">£35.00</div><a class="btn" href="#" onclick="add('Student Survival',35)">Add to basket</a></div></div>
+<div class="card"><div class="img">FINALS FUEL</div><div class="info"><h3>Finals Fuel</h3><p>Coffee, biscuits, eye mask</p><div class="price">£42.00</div><a class="btn" href="#" onclick="add('Finals Fuel',42)">Add to basket</a></div></div>
+<div class="card"><div class="img">HALLS TO HOME</div><div class="info"><h3>Halls to Home</h3><p>Fairy lights, mug, orange garland</p><div class="price">£48.00</div><a class="btn" href="#" onclick="add('Halls to Home',48)">Add to basket</a></div></div>
+</div>
+</main>
+</body></html>
