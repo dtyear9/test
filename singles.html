@@ -1,0 +1,136 @@
+<!doctype html><html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Singles | The December Box</title>
+<link rel="icon" href="Smalltopimg.jpg">
+<style>
+:root{--ink:#1A1A1A;--muted:#8A7F77;--paper:#F9F5F0;--white:#fff;--line:#E8DDD4;--beige:#F5F1EB}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px 'Inter',sans-serif}
+header{padding:32px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:20}
+.logo{font-family:'Times New Roman',Times,serif;font-size:22px;line-height:.95}
+nav{display:flex;align-items:center}nav a,.dropbtn{margin-left:24px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif}
+.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;top:20px;left:24px;background:var(--white);min-width:200px;border:1px solid var(--line);z-index:30;padding:8px 0}.dropdown-content a{display:block;margin:0;padding:10px 16px}.dropdown-content a:hover{background:var(--beige)}.dropdown:hover .dropdown-content{display:block}
+main{max-width:1100px;margin:auto;padding:40px 6vw}.h1{font:500 48px 'Playfair Display',serif;margin:0}.sub{color:var(--muted);margin:8px 0 30px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}.filters a{border:1px solid var(--line);padding:8px 14px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:white}.filters a.active{background:var(--ink);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--line);padding:0}.img{height:200px;background:linear-gradient(145deg,#EDE7DF,#F9F5F0);display:grid;place-items:center;color:var(--muted);font-size:11px;letter-spacing:.15em}.info{padding:16px}.info h3{font:500 18px 'Playfair Display',serif;margin:0 0 4px}.info p{color:var(--muted);font-size:13px;margin:0 0 10px}.price{font-weight:600}.btn{display:block;margin-top:12px;background:var(--ink);color:white;text-align:center;padding:10px;text-decoration:none;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}header{padding:20px 24px}}@media(max-width:500px){.grid{grid-template-columns:1fr}}
+.dropdown.active .dropdown-content{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+nav{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--ink);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.dropdown{
+    position:relative;
+    display:inline-block;
+}
+
+.dropbtn{
+    background:none;
+    border:none;
+    color:var(--ink);
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    cursor:pointer;
+    font-family:inherit;
+    padding:0;
+}
+
+.dropdown-content{
+    position:absolute;
+    top:100%;
+    left:0;
+    min-width:240px;
+    background:#fff;
+    border:1px solid #E8DDD4;
+    border-radius:10px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    padding:10px 0;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(8px);
+    transition:.25s ease;
+    z-index:1000;
+}
+
+.dropdown-content a{
+    display:block;
+    padding:12px 18px;
+    margin:0;
+    letter-spacing:.05em;
+    text-transform:none;
+    font-size:14px;
+}
+
+.dropdown-content a:hover{
+    background:#F9F5F0;
+}
+
+.dropdown:hover .dropdown-content{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+</style>
+<script>
+document.querySelector('.dropbtn').addEventListener('click', function(){
+    document.querySelector('.dropdown').classList.toggle('active');
+});
+</script>
+</head><body>
+<header>
+
+    <a href="index.html" style="text-decoration:none;color:inherit">
+        <div class="logo">
+            THE<br>
+            DECEMBER<br>
+            BOX
+        </div>
+    </a>
+
+    <nav>
+
+        <div class="dropdown">
+            <button class="dropbtn">BOXES ▾</button>
+
+            <div class="dropdown-content">
+                <a href="boxes.html">All Boxes</a>
+                <a href="for-the-student.html">For The Student</a>
+                <a href="for-the-first-flat.html">For The First Flat</a>
+                <a href="for-the-couple.html">For The Couple</a>
+                <a href="for-the-host.html">For The Host</a>
+                <a href="for-little-ones.html">For Little Ones</a>
+            </div>
+        </div>
+
+        <a href="singles.html">SINGLES</a>
+        <a href="basket.html">BASKET</a>
+
+    </nav>
+
+</header>
+<main>
+<h1 class="h1">Singles</h1><p class="sub">Buy the pieces individually. Add to any box.</p>
+<div class="grid">
+<div class="card"><div class="img">ORANGE GARLAND</div><div class="info"><h3>Dried Orange Garland</h3><p>Hand-dried, 1.5m</p><div class="price">£12.00</div><a class="btn" onclick="add('Orange Garland',12)">Add</a></div></div>
+<div class="card"><div class="img">PINE BUNDLE</div><div class="info"><h3>Mini Pine Bundle</h3><p>Fresh pine + twine</p><div class="price">£8.00</div><a class="btn" onclick="add('Pine Bundle',8)">Add</a></div></div>
+<div class="card"><div class="img">CANDLES</div><div class="info"><h3>Beeswax Candles (pair)</h3><p>Natural, 20cm</p><div class="price">£15.00</div><a class="btn" onclick="add('Beeswax Candles',15)">Add</a></div></div>
+<div class="card"><div class="img">MUG</div><div class="info"><h3>Stoneware Mug</h3><p>Speckled cream</p><div class="price">£18.00</div><a class="btn" onclick="add('Stoneware Mug',18)">Add</a></div></div>
+<div class="card"><div class="img">WRAP KIT</div><div class="info"><h3>Kraft Wrap Kit</h3><p>Paper + twine + tag</p><div class="price">£10.00</div><a class="btn" onclick="add('Kraft Wrap Kit',10)">Add</a></div></div>
+</div>
+</main>
+<script>const KEY="coastCoCart";function add(n,p){let c=JSON.parse(localStorage.getItem(KEY)||"[]");let f=c.find(i=>i.name===n);if(f)f.quantity++;else c.push({name:n,price:p,quantity:1});localStorage.setItem(KEY,JSON.stringify(c));alert(n+" added")}</script>
+</body></html>
