@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boxes — The December Box — thedecemberbox.christmas</title>
+<title>Boxes — The December Box</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root{--cream:#F9F5F0;--ink:#1A1A1A}
@@ -31,66 +31,60 @@ h1,h3{font-family:'Playfair Display',serif}
 <body>
 <div class="nav">
 <div style="font-weight:600;font-family:'Playfair Display';font-size:20px">The December Box</div>
-<div><a href="/">Home</a><a href="/boxes/">Boxes</a><a href="/homeware/">Homeware</a><a href="mailto:harry@thedecemberbox.christmas">harry@thedecemberbox.christmas</a><a href="#" id="cartLink">Cart <span class="cart-count" id="cartCount">0</span></a></div>
+<div><a href="/">Home</a><a href="/boxes/">Boxes</a><a href="/homeware/">Homeware</a><a href="/basket.html">Basket <span class="cart-count" id="cartCount">0</span></a></div>
 </div>
 <div class="wrap">
 <h1 style="font-size:52px">All 15 Boxes — Now 8-9 Items Inside</h1>
-<p style="opacity:0.7;max-width:700px;margin-top:12px">We added 3 small luxuries to every box (dried orange, cinnamon, Lindt, pine) — looks £20 more expensive for £1.55 extra. Free delivery over £70. thedecemberbox.christmas</p>
+<p style="opacity:0.7;max-width:700px;margin-top:12px">Free delivery over £70. thedecemberbox.christmas</p>
 
 <div class="grid">
-<div class="card"><h3>1. The Allotment Dad</h3><div class="count">8 ITEMS • BESTSELLER FOR DAD</div><ul><li>Enamel mug — Oat</li><li>Winter garlic seed set</li><li>Jute twine</li><li>Hand salve — gardener's repair</li><li>Pine & cedar candle 120g</li><li class="filler">+ Dried orange slices</li><li class="filler">+ Cinnamon bundle + pine cone</li><li class="filler">+ 3x Lindt truffles + handwritten tag</li></ul><div class="meta"><span class="price">£68.00</span><button class="btn" onclick="addToCart(this,'The Allotment Dad',68)">Add to Cart</button></div></div>
+<div class="card"><h3>1. The Allotment Dad</h3><div class="count">8 ITEMS • BESTSELLER FOR DAD</div><ul><li>Enamel mug — Oat</li><li>Winter garlic seed set</li><li>Jute twine</li><li>Hand salve</li><li>Pine & cedar candle 120g</li><li class="filler">+ Dried orange slices</li><li class="filler">+ Cinnamon bundle + pine cone</li><li class="filler">+ 3x Lindt truffles + handwritten tag</li></ul><div class="meta"><span class="price">£68.00</span><button class="btn" onclick="addToBasket('allotment-dad','The Allotment Dad',68,'Bestseller for Dad')">Add to Cart</button></div></div>
 
-<div class="card"><h3>2. The New House Box</h3><div class="count">9 ITEMS • HERO BOX</div><ul><li>Mini olive tree</li><li>Stone key bowl</li><li>Linen tea towel — Home for Christmas</li><li>Reed diffuser — fig</li><li>Door number bauble</li><li>Small storage basket</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon sticks</li><li class="filler">+ Pine sprig + card</li></ul><div class="meta"><span class="price">£85.00</span><button class="btn" onclick="addToCart(this,'The New House Box',85)">Add to Cart</button></div></div>
+<div class="card"><h3>2. The New House Box</h3><div class="count">9 ITEMS • HERO BOX</div><ul><li>Mini olive tree</li><li>Stone key bowl</li><li>Linen tea towel</li><li>Reed diffuser — fig</li><li>Door number bauble</li><li>Small storage basket</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon sticks</li><li class="filler">+ Pine sprig + card</li></ul><div class="meta"><span class="price">£85.00</span><button class="btn" onclick="addToBasket('new-house','The New House Box',85,'Hero Box')">Add to Cart</button></div></div>
 
-<div class="card"><h3>3. The Cosy Girl</h3><div class="count">8 ITEMS</div><ul><li>Teddy socks</li><li>Hot chocolate bomb</li><li>Hot water bottle cover</li><li>Cinnamon candle</li><li>Lip balm — vanilla</li><li class="filler">+ Dried orange + pine</li><li class="filler">+ Lindt truffles</li><li class="filler">+ Cosy card</li></ul><div class="meta"><span class="price">£62.00</span><button class="btn" onclick="addToCart(this,'The Cosy Girl',62)">Add to Cart</button></div></div>
+<div class="card"><h3>3. The Cosy Girl</h3><div class="count">8 ITEMS</div><ul><li>Teddy socks</li><li>Hot chocolate bomb</li><li>Hot water bottle cover</li><li>Cinnamon candle</li><li>Lip balm — vanilla</li><li class="filler">+ Dried orange + pine</li><li class="filler">+ Lindt truffles</li><li class="filler">+ Cosy card</li></ul><div class="meta"><span class="price">£62.00</span><button class="btn" onclick="addToBasket('cosy-girl','The Cosy Girl',62,'Cosy')">Add to Cart</button></div></div>
 
-<div class="card"><h3>4. The Homeware Mum</h3><div class="count">8 ITEMS</div><ul><li>Stoneware mug</li><li>Mini bud vase</li><li>Linen napkins x2</li><li>Hand soap — amber</li><li>All-butter shortbread tin</li><li class="filler">+ Orange slices + cinnamon</li><li class="filler">+ Pine cone + tag</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£78.00</span><button class="btn" onclick="addToCart(this,'The Homeware Mum',78)">Add to Cart</button></div></div>
+<div class="card"><h3>4. The Homeware Mum</h3><div class="count">8 ITEMS</div><ul><li>Stoneware mug</li><li>Mini bud vase</li><li>Linen napkins x2</li><li>Hand soap — amber</li><li>All-butter shortbread tin</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Pine cone + tag</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£78.00</span><button class="btn" onclick="addToBasket('homeware-mum','The Homeware Mum',78,'Homeware')">Add to Cart</button></div></div>
 
-<div class="card"><h3>5. The EV Guy</h3><div class="count">8 ITEMS</div><ul><li>Reusable coffee cup</li><li>Car diffuser</li><li>Screen wipes</li><li>De-icer spray</li><li>Lindt Lindor</li><li>Funny EV sticker</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Orange + card</li></ul><div class="meta"><span class="price">£65.00</span><button class="btn" onclick="addToCart(this,'The EV Guy',65)">Add to Cart</button></div></div>
+<div class="card"><h3>5. The EV Guy</h3><div class="count">8 ITEMS</div><ul><li>Reusable coffee cup</li><li>Car diffuser</li><li>Screen wipes</li><li>De-icer spray</li><li>Lindt Lindor</li><li>Funny EV sticker</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Orange + card</li></ul><div class="meta"><span class="price">£65.00</span><button class="btn" onclick="addToBasket('ev-guy','The EV Guy',65,'EV')">Add to Cart</button></div></div>
 
-<div class="card"><h3>6. The Builder Dad</h3><div class="count">8 ITEMS</div><ul><li>Thermal work socks</li><li>Flask — black</li><li>Hand repair cream</li><li>Bacon jam</li><li>Beanie</li><li class="filler">+ Chocolate bar</li><li class="filler">+ Pine + cinnamon</li><li class="filler">+ Orange + tag</li></ul><div class="meta"><span class="price">£60.00</span><button class="btn" onclick="addToCart(this,'The Builder Dad',60)">Add to Cart</button></div></div>
+<div class="card"><h3>6. The Builder Dad</h3><div class="count">8 ITEMS</div><ul><li>Thermal work socks</li><li>Flask — black</li><li>Hand repair cream</li><li>Bacon jam</li><li>Beanie</li><li class="filler">+ Chocolate bar</li><li class="filler">+ Pine + cinnamon</li><li class="filler">+ Orange + tag</li></ul><div class="meta"><span class="price">£60.00</span><button class="btn" onclick="addToBasket('builder-dad','The Builder Dad',60,'Builder')">Add to Cart</button></div></div>
 
-<div class="card"><h3>7. The Teacher</h3><div class="count">8 ITEMS</div><ul><li>Red wine mini</li><li>Candle — You Survived</li><li>Bath salts</li><li>Shortbread cookies</li><li>Gold pen</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li><li class="filler">+ Thank you card</li></ul><div class="meta"><span class="price">£58.00</span><button class="btn" onclick="addToCart(this,'The Teacher',58)">Add to Cart</button></div></div>
+<div class="card"><h3>7. The Teacher</h3><div class="count">8 ITEMS</div><ul><li>Red wine mini</li><li>Candle — You Survived</li><li>Bath salts</li><li>Shortbread cookies</li><li>Gold pen</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li><li class="filler">+ Thank you card</li></ul><div class="meta"><span class="price">£58.00</span><button class="btn" onclick="addToBasket('teacher','The Teacher',58,'Teacher')">Add to Cart</button></div></div>
 
-<div class="card"><h3>8. The Dog Mum</h3><div class="count">8 ITEMS</div><ul><li>Dog treats — natural</li><li>Paw balm</li><li>Fleece blanket</li><li>Socks — dog mum</li><li>Lead hook — brass</li><li class="filler">+ Tennis ball</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt for mum</li></ul><div class="meta"><span class="price">£72.00</span><button class="btn" onclick="addToCart(this,'The Dog Mum',72)">Add to Cart</button></div></div>
+<div class="card"><h3>8. The Dog Mum</h3><div class="count">8 ITEMS</div><ul><li>Dog treats — natural</li><li>Paw balm</li><li>Fleece blanket</li><li>Socks — dog mum</li><li>Lead hook — brass</li><li class="filler">+ Tennis ball</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt for mum</li></ul><div class="meta"><span class="price">£72.00</span><button class="btn" onclick="addToBasket('dog-mum','The Dog Mum',72,'Dog Mum')">Add to Cart</button></div></div>
 
-<div class="card"><h3>9. First Christmas Together</h3><div class="count">9 ITEMS</div><ul><li>2x matching mugs</li><li>Throw — cream</li><li>Photo frame ornament</li><li>Popcorn for 2</li><li>Mulled wine spice kit</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Card + Lindt</li></ul><div class="meta"><span class="price">£82.00</span><button class="btn" onclick="addToCart(this,'First Christmas Together',82)">Add to Cart</button></div></div>
+<div class="card"><h3>9. First Christmas Together</h3><div class="count">9 ITEMS</div><ul><li>2x matching mugs</li><li>Throw — cream</li><li>Photo frame ornament</li><li>Popcorn for 2</li><li>Mulled wine spice kit</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Card + Lindt</li></ul><div class="meta"><span class="price">£82.00</span><button class="btn" onclick="addToBasket('first-christmas','First Christmas Together',82,'Couples')">Add to Cart</button></div></div>
 
-<div class="card"><h3>10. The Grandad Who Naps</h3><div class="count">8 ITEMS</div><ul><li>Slippers</li><li>Fleece blanket</li><li>Werther's Original</li><li>Crossword book</li><li>Yorkshire Tea</li><li class="filler">+ Hot water bottle — mini</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Pine + tag</li></ul><div class="meta"><span class="price">£65.00</span><button class="btn" onclick="addToCart(this,'The Grandad Who Naps',65)">Add to Cart</button></div></div>
+<div class="card"><h3>10. The Grandad Who Naps</h3><div class="count">8 ITEMS</div><ul><li>Slippers</li><li>Fleece blanket</li><li>Werther's Original</li><li>Crossword book</li><li>Yorkshire Tea</li><li class="filler">+ Hot water bottle — mini</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Pine + tag</li></ul><div class="meta"><span class="price">£65.00</span><button class="btn" onclick="addToBasket('grandad-naps','The Grandad Who Naps',65,'Grandad')">Add to Cart</button></div></div>
 
-<div class="card"><h3>11. The Organised Mum</h3><div class="count">8 ITEMS</div><ul><li>2026 Planner</li><li>Storage baskets small x2</li><li>Label pen</li><li>Candle — linen</li><li>Biscuits</li><li class="filler">+ Tea bags</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span class="price">£68.00</span><button class="btn" onclick="addToCart(this,'The Organised Mum',68)">Add to Cart</button></div></div>
+<div class="card"><h3>11. The Organised Mum</h3><div class="count">8 ITEMS</div><ul><li>2026 Planner</li><li>Storage baskets small x2</li><li>Label pen</li><li>Candle — linen</li><li>Biscuits</li><li class="filler">+ Tea bags</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span class="price">£68.00</span><button class="btn" onclick="addToBasket('organised-mum','The Organised Mum',68,'Organised')">Add to Cart</button></div></div>
 
-<div class="card"><h3>12. Student / First Flat</h3><div class="count">8 ITEMS</div><ul><li>Fairy lights — warm</li><li>Ramen bowl</li><li>Tea towel — washing guide</li><li>Candle — small</li><li>Instant coffee pack</li><li class="filler">+ Noodles</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£55.00</span><button class="btn" onclick="addToCart(this,'Student / First Flat',55)">Add to Cart</button></div></div>
+<div class="card"><h3>12. Student / First Flat</h3><div class="count">8 ITEMS</div><ul><li>Fairy lights — warm</li><li>Ramen bowl</li><li>Tea towel</li><li>Candle — small</li><li>Instant coffee pack</li><li class="filler">+ Noodles</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£55.00</span><button class="btn" onclick="addToBasket('student-flat','Student / First Flat',55,'Student')">Add to Cart</button></div></div>
 
-<div class="card"><h3>13. Gamer Boyfriend</h3><div class="count">8 ITEMS</div><ul><li>Snack bowl</li><li>Fluffy socks</li><li>LED strip</li><li>Energy drink</li><li>Hand warmer</li><li class="filler">+ Sweets</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span class="price">£60.00</span><button class="btn" onclick="addToCart(this,'Gamer Boyfriend',60)">Add to Cart</button></div></div>
+<div class="card"><h3>13. Gamer Boyfriend</h3><div class="count">8 ITEMS</div><ul><li>Snack bowl</li><li>Fluffy socks</li><li>LED strip</li><li>Energy drink</li><li>Hand warmer</li><li class="filler">+ Sweets</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span class="price">£60.00</span><button class="btn" onclick="addToBasket('gamer-bf','Gamer Boyfriend',60,'Gamer')">Add to Cart</button></div></div>
 
-<div class="card"><h3>14. Kitchen Obsessed</h3><div class="count">8 ITEMS</div><ul><li>Olive wood spoon</li><li>Sea salt flakes</li><li>Chilli oil</li><li>Tea towel</li><li>Recipe cards</li><li class="filler">+ Candle</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£75.00</span><button class="btn" onclick="addToCart(this,'Kitchen Obsessed',75)">Add to Cart</button></div></div>
+<div class="card"><h3>14. Kitchen Obsessed</h3><div class="count">8 ITEMS</div><ul><li>Olive wood spoon</li><li>Sea salt flakes</li><li>Chilli oil</li><li>Tea towel</li><li>Recipe cards</li><li class="filler">+ Candle</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£75.00</span><button class="btn" onclick="addToBasket('kitchen','Kitchen Obsessed',75,'Kitchen')">Add to Cart</button></div></div>
 
-<div class="card"><h3>15. Signature December Box</h3><div class="count">9 ITEMS • FLAGSHIP</div><ul><li>Throw — oatmeal</li><li>Signature pine & orange candle 180g</li><li>Linen apron</li><li>Recipe book — Christmas</li><li>Dried orange garland — long</li><li>Cinnamon bundle large</li><li class="filler">+ Pine cones x3</li><li class="filler">+ Lindt + shortbread</li><li class="filler">+ Wax sealed card</li></ul><div class="meta"><span class="price">£95.00</span><button class="btn" onclick="addToCart(this,'Signature December Box',95)">Add to Cart</button></div></div>
-
+<div class="card"><h3>15. Signature December Box</h3><div class="count">9 ITEMS • FLAGSHIP</div><ul><li>Throw — oatmeal</li><li>Signature pine & orange candle 180g</li><li>Linen apron</li><li>Recipe book — Christmas</li><li>Dried orange garland — long</li><li>Cinnamon bundle large</li><li class="filler">+ Pine cones x3</li><li class="filler">+ Lindt + shortbread</li><li class="filler">+ Wax sealed card</li></ul><div class="meta"><span class="price">£95.00</span><button class="btn" onclick="addToBasket('signature','Signature December Box',95,'Flagship')">Add to Cart</button></div></div>
 </div>
 </div>
 
 <script>
-let cart = JSON.parse(localStorage.getItem('december_cart')||'[]');
+const CART_KEY = "coastCoCart";
+function getCart(){ try{ return JSON.parse(localStorage.getItem(CART_KEY)||"[]") }catch(e){ return [] } }
+function saveCart(c){ localStorage.setItem(CART_KEY, JSON.stringify(c)); updateCount(); }
+function updateCount(){ const c=getCart(); const total=c.reduce((s,i)=>s+(Number(i.quantity)||1),0); document.getElementById('cartCount').textContent=total; }
+function addToBasket(id,name,price,category){
+  let cart=getCart();
+  let existing=cart.find(i=>i.id===id);
+  if(existing){ existing.quantity=(Number(existing.quantity)||1)+1; }
+  else{ cart.push({id,name,price,quantity:1,category,url:'/boxes/'}); }
+  saveCart(cart);
+  event.target.textContent='Added ✓'; event.target.classList.add('added');
+  setTimeout(()=>{event.target.textContent='Add to Cart';event.target.classList.remove('added')},1200);
+}
 updateCount();
-function addToCart(btn,name,price){
-  cart.push({name,price});
-  localStorage.setItem('december_cart',JSON.stringify(cart));
-  updateCount();
-  btn.textContent='Added ✓';
-  btn.classList.add('added');
-  setTimeout(()=>{btn.textContent='Add to Cart';btn.classList.remove('added')},1200);
-}
-function updateCount(){
-  document.getElementById('cartCount').textContent=cart.length;
-}
-document.getElementById('cartLink').addEventListener('click',e=>{
-  e.preventDefault();
-  if(cart.length===0){alert('Cart empty');return}
-  let total=cart.reduce((s,i)=>s+i.price,0);
-  alert('Cart ('+cart.length+'):\n'+cart.map(c=>c.name+' - £'+c.price).join('\n')+'\n\nTotal: £'+total+'\n\nNext: Connect to Shopify / Stripe checkout');
-});
 </script>
 </body>
 </html>
