@@ -5,27 +5,215 @@
 <title>Boxes — The December Box</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#F9F5F0;--ink:#1A1A1A}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5}
-h1,h3{font-family:'Playfair Display',serif}
-.nav{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #E8DDD4;position:sticky;top:0;background:var(--cream);z-index:10}
-.nav a{text-decoration:none;color:var(--ink);margin-left:20px;font-size:13px;letter-spacing:0.1em;text-transform:uppercase}
-.cart-count{background:var(--ink);color:var(--cream);border-radius:50%;padding:2px 7px;font-size:11px;margin-left:6px}
-.wrap{padding:60px 40px;max-width:1300px;margin:auto}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
-.card{background:white;border:1px solid #E8DDD4;padding:28px;display:flex;flex-direction:column}
-.card h3{font-size:22px;margin-bottom:4px}
-.card .count{font-size:11px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.5;margin-bottom:12px}
-.card ul{font-size:14px;opacity:0.8;margin:12px 0 16px 18px;flex-grow:1}
-.card ul li{margin-bottom:4px}
-.card ul li.filler{opacity:0.6;font-style:italic}
-.meta{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #eee;padding-top:16px;margin-top:14px}
-.price{font-family:'Playfair Display';font-size:18px;font-weight:600}
-.btn{background:var(--ink);color:var(--cream);border:none;padding:12px 22px;font-size:11px;letter-spacing:0.15em;text-transform:uppercase;cursor:pointer;transition:0.2s}
-.btn:hover{opacity:0.8}
-.btn.added{background:#5A6D57}
-@media(max-width:900px){.grid{grid-template-columns:1fr}}
+:root{
+    --cream:#F9F5F0;
+    --ink:#1A1A1A;
+    --accent:#A1866F;
+    --border:#E8DDD4;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.5;
+}
+
+h1,h3{
+    font-family:'Playfair Display',serif;
+}
+
+header{
+    padding:24px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    background:rgba(249,245,240,.96);
+    backdrop-filter:blur(8px);
+    z-index:100;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    font-weight:600;
+    line-height:.95;
+    letter-spacing:.05em;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--ink);
+    margin-left:24px;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    transition:.25s;
+}
+
+nav a:hover{
+    opacity:.65;
+}
+
+.cart-count{
+    background:var(--ink);
+    color:var(--cream);
+    border-radius:50%;
+    padding:3px 8px;
+    font-size:10px;
+    margin-left:6px;
+}
+
+.wrap{
+    max-width:1400px;
+    margin:auto;
+    padding:80px 40px;
+}
+
+h1{
+    font-size:52px;
+    line-height:1.05;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    opacity:.65;
+    max-width:700px;
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:28px;
+}
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    padding:28px;
+    display:flex;
+    flex-direction:column;
+    border-radius:14px;
+    transition:all .25s ease;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 14px 34px rgba(0,0,0,.08);
+}
+
+.card h3{
+    font-size:24px;
+    margin-bottom:4px;
+}
+
+.count{
+    font-size:11px;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    opacity:.55;
+    margin-bottom:14px;
+}
+
+.card ul{
+    margin:12px 0 18px 18px;
+    font-size:14px;
+    flex-grow:1;
+}
+
+.card li{
+    margin-bottom:5px;
+}
+
+.card li.filler{
+    opacity:.6;
+    font-style:italic;
+}
+
+.meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid #eee;
+    padding-top:18px;
+    margin-top:auto;
+}
+
+.price{
+    font-family:'Playfair Display',serif;
+    font-size:20px;
+    font-weight:600;
+}
+
+.btn{
+    background:var(--ink);
+    color:var(--cream);
+    border:none;
+    border-radius:6px;
+    padding:12px 22px;
+    cursor:pointer;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:11px;
+    transition:all .25s ease;
+}
+
+.btn:hover{
+    background:#333;
+    transform:translateY(-1px);
+}
+
+.btn.added{
+    background:#5A6D57;
+}
+
+@media(max-width:900px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        margin:0 10px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .wrap{
+        padding:50px 20px;
+    }
+
+    h1{
+        font-size:36px;
+    }
+}
 </style>
 </head>
 <body>
