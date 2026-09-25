@@ -1,298 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boxes — The December Box</title>
-    <link rel="icon" type="image/jpg" href="smalltopimg.jpg">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!doctype html>
+<html><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boxes | The December Box</title>
+<link rel="icon" type="image/jpeg" href="Smalltopimg.jpg">
 <style>
-:root{
-    --cream:#F9F5F0;
-    --ink:#1A1A1A;
-    --accent:#A1866F;
-    --border:#E8DDD4;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
-}
-
-h1,h3{
-    font-family:'Playfair Display',serif;
-}
-
-header{
-    padding:24px 40px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid var(--border);
-    position:sticky;
-    top:0;
-    background:rgba(249,245,240,.96);
-    backdrop-filter:blur(8px);
-    z-index:100;
-}
-
-.logo{
-    font-family:'Playfair Display',serif;
-    font-size:24px;
-    font-weight:600;
-    line-height:.95;
-    letter-spacing:.05em;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-}
-
-nav a{
-    text-decoration:none;
-    color:var(--ink);
-    margin-left:24px;
-    font-size:12px;
-    letter-spacing:.14em;
-    text-transform:uppercase;
-    transition:.25s;
-}
-
-nav a:hover{
-    opacity:.65;
-}
-
-.cart-count{
-    background:var(--ink);
-    color:var(--cream);
-    border-radius:50%;
-    padding:3px 8px;
-    font-size:10px;
-    margin-left:6px;
-}
-
-.wrap{
-    max-width:1400px;
-    margin:auto;
-    padding:80px 40px;
-}
-
-h1{
-    font-size:52px;
-    line-height:1.05;
-    margin-bottom:10px;
-}
-
-.subtitle{
-    opacity:.65;
-    max-width:700px;
-    margin-bottom:40px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:28px;
-}
-
-.card{
-    background:#fff;
-    border:1px solid var(--border);
-    padding:28px;
-    display:flex;
-    flex-direction:column;
-    border-radius:14px;
-    transition:all .25s ease;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 14px 34px rgba(0,0,0,.08);
-}
-
-.card h3{
-    font-size:24px;
-    margin-bottom:4px;
-}
-
-.count{
-    font-size:11px;
-    letter-spacing:.15em;
-    text-transform:uppercase;
-    opacity:.55;
-    margin-bottom:14px;
-}
-
-.card ul{
-    margin:12px 0 18px 18px;
-    font-size:14px;
-    flex-grow:1;
-}
-
-.card li{
-    margin-bottom:5px;
-}
-
-.card li.filler{
-    opacity:.6;
-    font-style:italic;
-}
-
-.meta{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-top:1px solid #eee;
-    padding-top:18px;
-    margin-top:auto;
-}
-
-.price{
-    font-family:'Playfair Display',serif;
-    font-size:20px;
-    font-weight:600;
-}
-
-.btn{
-    background:var(--ink);
-    color:var(--cream);
-    border:none;
-    border-radius:6px;
-    padding:12px 22px;
-    cursor:pointer;
-    text-transform:uppercase;
-    letter-spacing:.14em;
-    font-size:11px;
-    transition:all .25s ease;
-}
-
-.btn:hover{
-    background:#333;
-    transform:translateY(-1px);
-}
-
-.btn.added{
-    background:#5A6D57;
-}
-
-@media(max-width:900px){
-
-    header{
-        flex-direction:column;
-        gap:20px;
-    }
-
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    nav a{
-        margin:0 10px;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
-    .wrap{
-        padding:50px 20px;
-    }
-
-    h1{
-        font-size:36px;
-    }
-}
+:root{--ink:#1A1A1A;--muted:#8A7F77;--paper:#F9F5F0;--white:#fff;--line:#E8DDD4;--beige:#F5F1EB}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px 'Inter',sans-serif}
+header{padding:32px 40px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper);z-index:20}
+.logo{font-family:'Times New Roman',Times,serif;font-size:22px;line-height:.95}
+nav{display:flex;align-items:center}nav a,.dropbtn{margin-left:24px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:none;border:0;cursor:pointer;font-family:'Inter',sans-serif}
+.dropdown{position:relative;display:inline-block}.dropdown-content{display:none;position:absolute;top:20px;left:24px;background:var(--white);min-width:200px;border:1px solid var(--line);z-index:30;padding:8px 0}.dropdown-content a{display:block;margin:0;padding:10px 16px}.dropdown-content a:hover{background:var(--beige)}.dropdown:hover .dropdown-content{display:block}
+main{max-width:1100px;margin:auto;padding:40px 6vw}.h1{font:500 48px 'Playfair Display',serif;margin:0}.sub{color:var(--muted);margin:8px 0 30px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}.filters a{border:1px solid var(--line);padding:8px 14px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:white}.filters a.active{background:var(--ink);color:white}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:white;border:1px solid var(--line);padding:0}.img{height:200px;background:linear-gradient(145deg,#EDE7DF,#F9F5F0);display:grid;place-items:center;color:var(--muted);font-size:11px;letter-spacing:.15em}.info{padding:16px}.info h3{font:500 18px 'Playfair Display',serif;margin:0 0 4px}.info p{color:var(--muted);font-size:13px;margin:0 0 10px}.price{font-weight:600}.btn{display:block;margin-top:12px;background:var(--ink);color:white;text-align:center;padding:10px;text-decoration:none;font-size:11px;letter-spacing:.15em;text-transform:uppercase}
+@media(max-width:800px){.grid{grid-template-columns:1fr 1fr}header{padding:20px 24px}}@media(max-width:500px){.grid{grid-template-columns:1fr}}
 </style>
-</head>
-<body>
+</head><body>
 <header>
-
-    <a href="index.html" style="text-decoration:none;color:inherit">
-        <div class="logo">
-            THE<br>
-            DECEMBER<br>
-            BOX
-        </div>
-    </a>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="boxes.html">Boxes</a>
-        <a href="homeware.html">Homeware</a>
-        <a href="basket.html">Cart</a>
-            <span id="cartCount" class="cart-count">0</span>
-        </a>
-    </nav>
-
+<a href="index.html" style="text-decoration:none;color:inherit"><div class="logo">THE<br>DECEMBER<br>BOX</div></a>
+<nav>
+<div class="dropdown"><button class="dropbtn">BOXES ▾</button><div class="dropdown-content">
+<a href="boxes.html">All Boxes</a><a href="for-the-student.html">For The Student</a><a href="for-the-first-flat.html">For The First Flat</a><a href="for-the-couple.html">For The Couple</a><a href="for-the-host.html">For The Host</a><a href="for-little-ones.html">For Little Ones</a>
+</div></div>
+<a href="singles.html">SINGLES</a><a href="basket.html">BASKET</a>
+</nav>
 </header>
-<div class="wrap">
-<h1>All 15 Boxes — Now 8-9 Items Inside</h1>
-<p class="subtitle">Free delivery over £70. thedecemberbox.christmas</p>
-
+<main>
+<h1 class="h1">The Boxes</h1><p class="sub">18 curated boxes — shop all or filter by person.</p>
+<div class="filters">
+<a href="boxes.html" class="active">All</a><a href="for-the-student.html">For The Student</a><a href="for-the-first-flat.html">For The First Flat</a><a href="for-the-couple.html">For The Couple</a><a href="for-the-host.html">For The Host</a><a href="for-little-ones.html">For Little Ones</a>
+</div>
 <div class="grid">
-<div class="card"><h3>1. The Allotment Dad</h3><div class="count">8 ITEMS • BESTSELLER FOR DAD</div><ul><li>Enamel mug — Oat</li><li>Winter garlic seed set</li><li>Jute twine</li><li>Hand salve</li><li>Pine & cedar candle 120g</li><li class="filler">+ Dried orange slices</li><li class="filler">+ Cinnamon bundle + pine cone</li><li class="filler">+ 3x Lindt truffles + handwritten tag</li></ul><div class="meta"><span class="price">£68.00</span><button class="btn" onclick="addToBasket('allotment-dad','The Allotment Dad',68,'Bestseller for Dad')">Add to Cart</button></div></div>
-
-<div class="card"><h3>2. The New House Box</h3><div class="count">9 ITEMS • HERO BOX</div><ul><li>Mini olive tree</li><li>Stone key bowl</li><li>Linen tea towel</li><li>Reed diffuser — fig</li><li>Door number bauble</li><li>Small storage basket</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon sticks</li><li class="filler">+ Pine sprig + card</li></ul><div class="meta"><span class="price">£85.00</span><button class="btn" onclick="addToBasket('new-house','The New House Box',85,'Hero Box')">Add to Cart</button></div></div>
-
-<div class="card"><h3>3. The Cosy Girl</h3><div class="count">8 ITEMS</div><ul><li>Teddy socks</li><li>Hot chocolate bomb</li><li>Hot water bottle cover</li><li>Cinnamon candle</li><li>Lip balm — vanilla</li><li class="filler">+ Dried orange + pine</li><li class="filler">+ Lindt truffles</li><li class="filler">+ Cosy card</li></ul><div class="meta"><span class="price">£62.00</span><button class="btn" onclick="addToBasket('cosy-girl','The Cosy Girl',62,'Cosy')">Add to Cart</button></div></div>
-
-<div class="card"><h3>4. The Homeware Mum</h3><div class="count">8 ITEMS</div><ul><li>Stoneware mug</li><li>Mini bud vase</li><li>Linen napkins x2</li><li>Hand soap — amber</li><li>All-butter shortbread tin</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Pine cone + tag</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£78.00</span><button class="btn" onclick="addToBasket('homeware-mum','The Homeware Mum',78,'Homeware')">Add to Cart</button></div></div>
-
-<div class="card"><h3>5. The EV Guy</h3><div class="count">8 ITEMS</div><ul><li>Reusable coffee cup</li><li>Car diffuser</li><li>Screen wipes</li><li>De-icer spray</li><li>Lindt Lindor</li><li>Funny EV sticker</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Orange + card</li></ul><div class="meta"><span class="price">£65.00</span><button class="btn" onclick="addToBasket('ev-guy','The EV Guy',65,'EV')">Add to Cart</button></div></div>
-
-<div class="card"><h3>6. The Builder Dad</h3><div class="count">8 ITEMS</div><ul><li>Thermal work socks</li><li>Flask — black</li><li>Hand repair cream</li><li>Bacon jam</li><li>Beanie</li><li class="filler">+ Chocolate bar</li><li class="filler">+ Pine + cinnamon</li><li class="filler">+ Orange + tag</li></ul><div class="meta"><span class="price">£60.00</span><button class="btn" onclick="addToBasket('builder-dad','The Builder Dad',60,'Builder')">Add to Cart</button></div></div>
-
-<div class="card"><h3>7. The Teacher</h3><div class="count">8 ITEMS</div><ul><li>Red wine mini</li><li>Candle — You Survived</li><li>Bath salts</li><li>Shortbread cookies</li><li>Gold pen</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li><li class="filler">+ Thank you card</li></ul><div class="meta"><span class="price">£58.00</span><button class="btn" onclick="addToBasket('teacher','The Teacher',58,'Teacher')">Add to Cart</button></div></div>
-
-<div class="card"><h3>8. The Dog Mum</h3><div class="count">8 ITEMS</div><ul><li>Dog treats — natural</li><li>Paw balm</li><li>Fleece blanket</li><li>Socks — dog mum</li><li>Lead hook — brass</li><li class="filler">+ Tennis ball</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt for mum</li></ul><div class="meta"><span class="price">£72.00</span><button class="btn" onclick="addToBasket('dog-mum','The Dog Mum',72,'Dog Mum')">Add to Cart</button></div></div>
-
-<div class="card"><h3>9. First Christmas Together</h3><div class="count">9 ITEMS</div><ul><li>2x matching mugs</li><li>Throw — cream</li><li>Photo frame ornament</li><li>Popcorn for 2</li><li>Mulled wine spice kit</li><li class="filler">+ Dried orange garland</li><li class="filler">+ Cinnamon + pine</li><li class="filler">+ Card + Lindt</li></ul><div class="meta"><span class="price">£82.00</span><button class="btn" onclick="addToBasket('first-christmas','First Christmas Together',82,'Couples')">Add to Cart</button></div></div>
-
-<div class="card"><h3>10. The Grandad Who Naps</h3><div class="count">8 ITEMS</div><ul><li>Slippers</li><li>Fleece blanket</li><li>Werther's Original</li><li>Crossword book</li><li>Yorkshire Tea</li><li class="filler">+ Hot water bottle — mini</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Pine + tag</li></ul><div class="meta"><span class="price">£65.00</span><button class="btn" onclick="addToBasket('grandad-naps','The Grandad Who Naps',65,'Grandad')">Add to Cart</button></div></div>
-
-<div class="card"><h3>11. The Organised Mum</h3><div class="count">8 ITEMS</div><ul><li>2026 Planner</li><li>Storage baskets small x2</li><li>Label pen</li><li>Candle — linen</li><li>Biscuits</li><li class="filler">+ Tea bags</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span class="price">£68.00</span><button class="btn" onclick="addToBasket('organised-mum','The Organised Mum',68,'Organised')">Add to Cart</button></div></div>
-
-<div class="card"><h3>12. Student / First Flat</h3><div class="count">8 ITEMS</div><ul><li>Fairy lights — warm</li><li>Ramen bowl</li><li>Tea towel</li><li>Candle — small</li><li>Instant coffee pack</li><li class="filler">+ Noodles</li><li class="filler">+ Orange + pine</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£55.00</span><button class="btn" onclick="addToBasket('student-flat','Student / First Flat',55,'Student')">Add to Cart</button></div></div>
-
-<div class="card"><h3>13. Gamer Boyfriend</h3><div class="count">8 ITEMS</div><ul><li>Snack bowl</li><li>Fluffy socks</li><li>LED strip</li><li>Energy drink</li><li>Hand warmer</li><li class="filler">+ Sweets</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Card</li></ul><div class="meta"><span class="price">£60.00</span><button class="btn" onclick="addToBasket('gamer-bf','Gamer Boyfriend',60,'Gamer')">Add to Cart</button></div></div>
-
-<div class="card"><h3>14. Kitchen Obsessed</h3><div class="count">8 ITEMS</div><ul><li>Olive wood spoon</li><li>Sea salt flakes</li><li>Chilli oil</li><li>Tea towel</li><li>Recipe cards</li><li class="filler">+ Candle</li><li class="filler">+ Orange + cinnamon</li><li class="filler">+ Lindt</li></ul><div class="meta"><span class="price">£75.00</span><button class="btn" onclick="addToBasket('kitchen','Kitchen Obsessed',75,'Kitchen')">Add to Cart</button></div></div>
-
-<div class="card"><h3>15. Signature December Box</h3><div class="count">9 ITEMS • FLAGSHIP</div><ul><li>Throw — oatmeal</li><li>Signature pine & orange candle 180g</li><li>Linen apron</li><li>Recipe book — Christmas</li><li>Dried orange garland — long</li><li>Cinnamon bundle large</li><li class="filler">+ Pine cones x3</li><li class="filler">+ Lindt + shortbread</li><li class="filler">+ Wax sealed card</li></ul><div class="meta"><span class="price">£95.00</span><button class="btn" onclick="addToBasket('signature','Signature December Box',95,'Flagship')">Add to Cart</button></div></div>
+<!-- STUDENT -->
+<div class="card" data-cat="student"><div class="img">STUDENT SURVIVAL</div><div class="info"><h3>Student Survival</h3><p>Desk candle, instant cocoa, study playlist</p><div class="price">£35.00</div><a class="btn" href="#" onclick="add('Student Survival',35)">Add to basket</a></div></div>
+<div class="card"><div class="img">FINALS FUEL</div><div class="info"><h3>Finals Fuel</h3><p>Coffee, biscuits, eye mask</p><div class="price">£42.00</div><a class="btn" href="#" onclick="add('Finals Fuel',42)">Add to basket</a></div></div>
+<div class="card"><div class="img">HALLS TO HOME</div><div class="info"><h3>Halls to Home</h3><p>Fairy lights, mug, orange garland</p><div class="price">£48.00</div><a class="btn" href="#" onclick="add('Halls to Home',48)">Add to basket</a></div></div>
+<!-- FIRST FLAT -->
+<div class="card"><div class="img">FIRST FLAT STARTER</div><div class="info"><h3>First Flat Starter</h3><p>Mug, tea towel, candle, matches</p><div class="price">£55.00</div><a class="btn" href="#" onclick="add('First Flat Starter',55)">Add to basket</a></div></div>
+<div class="card"><div class="img">KITCHEN WARM UP</div><div class="info"><h3>Kitchen Warm Up</h3><p>Apron, wooden spoon, spice mix</p><div class="price">£58.00</div><a class="btn" href="#" onclick="add('Kitchen Warm Up',58)">Add to basket</a></div></div>
+<div class="card"><div class="img">BATHROOM CALM</div><div class="info"><h3>Bathroom Calm</h3><p>Soap, towel, eucalyptus bundle</p><div class="price">£52.00</div><a class="btn" href="#" onclick="add('Bathroom Calm',52)">Add to basket</a></div></div>
+<div class="card"><div class="img">MOVING DAY</div><div class="info"><h3>Moving Day Box</h3><p>Kraft wrap, plant, keyring, candle</p><div class="price">£65.00</div><a class="btn" href="#" onclick="add('Moving Day Box',65)">Add to basket</a></div></div>
+<!-- COUPLE -->
+<div class="card"><div class="img">COSY NIGHT IN</div><div class="info"><h3>The Cosy Night In</h3><p>2 mugs, cocoa, film list</p><div class="price">£62.00</div><a class="btn" href="#" onclick="add('Cosy Night In',62)">Add to basket</a></div></div>
+<div class="card"><div class="img">SUNDAY MORNING</div><div class="info"><h3>The Sunday Morning</h3><p>Coffee, croissant kit, linen</p><div class="price">£68.00</div><a class="btn" href="#" onclick="add('Sunday Morning',68)">Add to basket</a></div></div>
+<div class="card"><div class="img">FIRST CHRISTMAS</div><div class="info"><h3>First Christmas Together</h3><p>Ornament, 2 candles, card</p><div class="price">£75.00</div><a class="btn" href="#" onclick="add('First Christmas Together',75)">Add to basket</a></div></div>
+<!-- HOST -->
+<div class="card"><div class="img">DINNER PARTY</div><div class="info"><h3>The Dinner Party</h3><p>Table garland, matches, napkins</p><div class="price">£60.00</div><a class="btn" href="#" onclick="add('Dinner Party',60)">Add to basket</a></div></div>
+<div class="card"><div class="img">THANK YOU HOST</div><div class="info"><h3>Thank You Host</h3><p>Wine bag, candle, thank you card</p><div class="price">£45.00</div><a class="btn" href="#" onclick="add('Thank You Host',45)">Add to basket</a></div></div>
+<div class="card"><div class="img">CHRISTMAS EVE HOST</div><div class="info"><h3>Christmas Eve Host</h3><p>Cheese board, pine, crackers</p><div class="price">£72.00</div><a class="btn" href="#" onclick="add('Christmas Eve Host',72)">Add to basket</a></div></div>
+<!-- LITTLE ONES -->
+<div class="card"><div class="img">LITTLE ELF</div><div class="info"><h3>The Little Elf</h3><p>Hot choc, socks, activity sheet</p><div class="price">£32.00</div><a class="btn" href="#" onclick="add('Little Elf',32)">Add to basket</a></div></div>
+<div class="card"><div class="img">FAMILY FILM NIGHT</div><div class="info"><h3>Family Film Night</h3><p>Popcorn, blanket, lights</p><div class="price">£58.00</div><a class="btn" href="#" onclick="add('Family Film Night',58)">Add to basket</a></div></div>
+<div class="card"><div class="img">STOCKING FILLER BOX</div><div class="info"><h3>Stocking Filler Box</h3><p>Mini toys, cocoa, orange</p><div class="price">£28.00</div><a class="btn" href="#" onclick="add('Stocking Filler Box',28)">Add to basket</a></div></div>
+<div class="card"><div class="img">SNOW DAY</div><div class="info"><h3>The Snow Day</h3><p>Marshmallows, mug, gloves</p><div class="price">£40.00</div><a class="btn" href="#" onclick="add('Snow Day',40)">Add to basket</a></div></div>
+<div class="card"><div class="img">LETTER TO SANTA</div><div class="info"><h3>Letter to Santa</h3><p>Paper set, wax seal, stamps</p><div class="price">£38.00</div><a class="btn" href="#" onclick="add('Letter to Santa',38)">Add to basket</a></div></div>
 </div>
-</div>
-
+</main>
 <script>
-const CART_KEY = "coastCoCart";
-function getCart(){ try{ return JSON.parse(localStorage.getItem(CART_KEY)||"[]") }catch(e){ return [] } }
-function saveCart(c){ localStorage.setItem(CART_KEY, JSON.stringify(c)); updateCount(); }
-function updateCount(){ const c=getCart(); const total=c.reduce((s,i)=>s+(Number(i.quantity)||1),0); document.getElementById('cartCount').textContent=total; }
-function addToBasket(id,name,price,category){
-  let cart=getCart();
-  let existing=cart.find(i=>i.id===id);
-  if(existing){ existing.quantity=(Number(existing.quantity)||1)+1; }
-  else{ cart.push({id,name,price,quantity:1,category,url:'/boxes/'}); }
-  saveCart(cart);
-  event.target.textContent='Added ✓'; event.target.classList.add('added');
-  setTimeout(()=>{event.target.textContent='Add to Cart';event.target.classList.remove('added')},1200);
-}
-updateCount();
+const KEY="coastCoCart";
+function add(name,price){let c=JSON.parse(localStorage.getItem(KEY)||"[]");let f=c.find(i=>i.name===name);if(f)f.quantity++;else c.push({name,price,quantity:1});localStorage.setItem(KEY,JSON.stringify(c));alert(name+" added")}
 </script>
-</body>
-</html>
+</body></html>
