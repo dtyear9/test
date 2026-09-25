@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | The December Box</title>
+<style>
+:root{--ink:#0F0F0F;--paper:#F5F1EB;--line:rgba(0,0,0,0.08)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px Helvetica,Arial,sans-serif}
+header{padding:32px 40px;display:flex;justify-content:space-between;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--paper)}
+.logo{font-family:'Times New Roman',serif;font-size:28px;line-height:0.92}
+nav a{margin-left:24px;text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:0.15em;text-transform:uppercase}
+.wrap{max-width:1100px;margin:auto;padding:48px 40px;display:grid;grid-template-columns:1.2fr 0.8fr;gap:40px}
+h1{font-family:'Times New Roman',serif;font-size:42px;font-weight:400;margin:0}
+.card{background:white;border:1px solid var(--line);padding:28px;margin-top:24px}
+label{display:block;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;margin:18px 0 6px;opacity:0.7}
+input,textarea{width:100%;padding:12px;border:1px solid var(--line);background:#FCFBF9;font:14px Helvetica}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.btn{width:100%;background:var(--ink);color:var(--paper);border:none;padding:16px;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;cursor:pointer;margin-top:20px}
+.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
+.total{font-weight:bold;font-size:16px;font-family:'Times New Roman';border:none;padding-top:16px}
+.success{display:none;background:#0F0F0F;color:#F5F1EB;padding:32px;margin-top:24px}
+.success h2{font-family:'Times New Roman';font-weight:400}
+.bank{border:1px dashed #0F0F0F;padding:16px;margin:16px 0;background:#F5F1EB;color:#0F0F0F}
+@media(max-width:900px){.wrap{grid-template-columns:1fr;padding:24px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo"><div>THE</div><div>DECEMBER</div><div>BOX</div></div>
+<nav><a href="boxes.html">Boxes</a><a href="basket.html">Basket</a></nav>
+</header>
+
+<div class="wrap">
+<div>
+<h1>Checkout</h1>
+<p style="opacity:0.6">Pay by bank transfer — our own system. No Stripe fees.</p>
+
+<div class="card" id="formCard">
+<label>Email *</label><input id="email" type="email" placeholder="you@email.com">
+<div class="grid2"><div><label>First Name *</label><input id="first"></div><div><label>Last Name</label><input id="last"></div></div>
+<label>Delivery Address *</label><input id="addr" placeholder="House, street, city, postcode">
+<label>Phone</label><input id="phone">
+<label>Gift Note</label><textarea id="note" rows="3"></textarea>
+<button class="btn" id="placeBtn">Place Order — Pay by Bank Transfer</button>
+<p style="font-size:11px;opacity:0.5;margin-top:12px">You’ll get bank details after placing order. We ship once payment clears.</p>
+</div>
+
+<div class="success" id="success">
+<h2>Order Placed — Reference <span id="ref"></span></h2>
+<p>We’ve saved your order. Please pay by bank transfer now:</p>
+<div class="bank">
+<strong>Account Name:</strong> THE DECEMBER BOX LTD<br>
+<strong>Sort Code:</strong> 04-00-04 (Monzo example — change to yours)<br>
+<strong>Account No:</strong> 12345678<br>
+<strong>Reference:</strong> <span id="ref2" style="font-weight:bold"></span><br>
+<strong>Amount:</strong> <span id="payAmount"></span>
+</div>
+<p style="font-size:13px;line-height:1.6">1. Open your banking app<br>2. Pay amount above with reference above<br>3. Email harry@thedecemberbox.christmas if needed<br>4. We’ll confirm & ship within 2 days</p>
+<p style="font-size:12px;opacity:0.8;margin-top:20px">A copy has been emailed to you (via your browser — set up email below).</p>
+</div>
+</div>
+
+<div>
+<div class="card" style="position:sticky;top:90px">
+<h2 style="font-family:'Times New Roman';font-weight:400;margin:0 0 16px">Your Order</h2>
+<div id="items"></div>
+<div class="row"><span>Subtotal</span><span id="sub"></span></div>
+<div class="row"><span>Delivery</span><span id="del"></span></div>
+<div class="row total"><span>Total</span><span id="tot"></span></div>
+</div>
+</div>
+</div>
+
+<script>
+const CART_KEY="coastCoCart";
+function getCart(){try{return JSON.parse(localStorage.getItem(CART_KEY)||"[]")}catch(e){return[]}}
+function money(v){return new Intl.NumberFormat("en-GB",{style:"currency",currency:"GBP"}).format(v)}
+
+let cart=getCart();
+let sub=0; cart.forEach(i=> sub+= (Number(i.price)||0)*(Number(i.quantity)||1));
+let del = sub>=70 || sub==0 ? 0 : 4.95;
+let tot = sub+del;
+
+document.getElementById("sub").textContent=money(sub);
+document.getElementById("del").textContent= del==0 ? "FREE" : money(del);
+document.getElementById("tot").textContent=money(tot);
+document.getElementById("items").innerHTML= cart.map(i=> `<div class="row"><span>${i.name} x${i.quantity}</span><span>${money(i.price*i.quantity)}</span></div>`).join("") || "<p>Empty</p>";
+
+document.getElementById("placeBtn").onclick=()=>{
+  const email=document.getElementById("email").value;
+  const first=document.getElementById("first").value;
+  const addr=document.getElementById("addr").value;
+  if(!email||!first||!addr) return alert("Fill email, name, address");
+
+  const ref="DEC-"+Math.random().toString(36).toUpperCase().slice(2,7);
+  const order={ref,email,first,last:document.getElementById("last").value,addr,phone:document.getElementById("phone").value,note:document.getElementById("note").value,items:cart,sub,del,tot,date:new Date().toISOString()};
+
+  // Save orders locally — this IS your database for now
+  let all=JSON.parse(localStorage.getItem("december_orders")||"[]");
+  all.push(order);
+  localStorage.setItem("december_orders", JSON.stringify(all));
+  localStorage.setItem("december_last_order", JSON.stringify(order));
+
+  // Show bank details
+  document.getElementById("formCard").style.display="none";
+  document.getElementById("success").style.display="block";
+  document.getElementById("ref").textContent=ref;
+  document.getElementById("ref2").textContent=ref;
+  document.getElementById("payAmount").textContent=money(tot);
+
+  // OPTIONAL: Send email automatically via Formspree / EmailJS (free)
+  // Replace URL below with your Formspree endpoint to actually email you + customer
+  fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({email, ref, total: tot, items: cart.map(i=>i.name+" x"+i.quantity).join(", "), address: addr})
+  }).catch(()=>{});
+
+  // Clear cart
+  // localStorage.removeItem(CART_KEY);
+};
+</script>
+</body>
+</html>
