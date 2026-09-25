@@ -24,7 +24,7 @@ header{
   border-bottom:1px solid var(--line);
   position:sticky;top:0;
   background:var(--paper);
-  z-index:10;
+  z-index:20;
 }
 .logo{
   font-family:'Times New Roman',Times,serif;
@@ -33,14 +33,41 @@ header{
   letter-spacing:-0.02em;
   text-transform:uppercase;
 }
-nav a{
+nav{display:flex;align-items:center}
+nav a, .dropbtn{
   margin-left:24px;
   text-decoration:none;
   color:var(--ink);
   font-size:11px;
   letter-spacing:0.15em;
   text-transform:uppercase;
+  background:none;
+  border:0;
+  cursor:pointer;
+  font-family:'Inter',sans-serif;
+  padding:0;
 }
+.dropdown{position:relative;display:inline-block}
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:20px;left:24px;
+  background:var(--white);
+  min-width:200px;
+  border:1px solid var(--line);
+  z-index:30;
+  padding:8px 0;
+}
+.dropdown-content a{
+  display:block;
+  margin:0;
+  padding:10px 16px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+}
+.dropdown-content a:hover{background:var(--beige)}
+.dropdown:hover .dropdown-content{display:block}
 
 main{max-width:1050px;margin:auto;padding:38px 6vw 70px}
 .title{font:500 42px 'Playfair Display',serif;margin:0 0 8px}
@@ -105,9 +132,19 @@ footer{padding:2rem 6vw;font-size:0.8rem;color:var(--muted);border-top:1px solid
   <div class="logo">THE<br>DECEMBER<br>BOX</div>
 </a>
 <nav>
-  <a href="index.html">HOME</a>
-  <a href="boxes.html">BOXES</a>
-  <a href="homeware.html">HOMEWARE</a>
+  <div class="dropdown">
+    <button class="dropbtn">BOXES ▾</button>
+    <div class="dropdown-content">
+      <a href="boxes.html">All Boxes</a>
+      <a href="for-the-student.html">For The Student</a>
+      <a href="for-the-first-flat.html">For The First Flat</a>
+      <a href="for-the-couple.html">For The Couple</a>
+      <a href="for-the-host.html">For The Host</a>
+      <a href="for-little-ones.html">For Little Ones</a>
+    </div>
+  </div>
+  <a href="singles.html">SINGLES</a>
+  <a href="basket.html">BASKET (<span id="basket-count">0</span>)</a>
 </nav>
 </header>
 
